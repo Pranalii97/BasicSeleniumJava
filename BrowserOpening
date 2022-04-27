@@ -1,0 +1,38 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LaunchBrowser {
+
+	public static void main(String[] args) {
+		// Demo of launching browser and opening websites
+		
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\Driver\\chromedriver.exe");
+    
+		//setproperty()==>  automates testcases on any browser
+    
+		WebDriver wd = new ChromeDriver(); //upcasting
+		/*Webdriver is an interface and all the method which are declared in webdriver
+		 * interface are implemented by respective driver class by implementing 
+		 * upcasting can run script on any browser 
+		 */
+		
+	
+		
+		wd.manage().window().maximize(); 
+    //maximize current open web browser
+		wd.get("https://www.google.co.in/"); 
+    //open url and will wait till page is loaded
+		String title = wd.getTitle(); 
+    //is used to obtain title of present page
+		System.out.println("Title of webpage===> " + title);
+		
+		wd.quit(); //close the open web browser
+		
+		
+		
+
+	}
+
+}
+
