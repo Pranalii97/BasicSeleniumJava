@@ -1,0 +1,32 @@
+/*	CSS====> Cascading stype sheet are used to style webpages & is effective medium to
+		 * 			locate various webelements.Webpages are designed dynamically.So its quit
+		 * 			challenging to get unique id,name,classname to locate element.cssSelector
+		 * 			can be alternatives & faster compared to another locator
+		 */
+     
+     
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DemocsSelector {
+
+	public static void main(String[] args) 
+  {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\\\Selenium\\\\Driver\\\\chromedriver.exe");
+		WebDriver wd = new ChromeDriver();
+		wd.get("https://opensource-demo.orangehrmlive.com/");
+		
+		//tag and id = cs = tagname#valueOfid
+		wd.findElement(By.cssSelector("input#txtUsername")).sendKeys("admin");
+    
+		//tag and attribute= css= tagname[attribute=valueOfattribute]
+		wd.findElement(By.cssSelector("input[type=password]")).sendKeys("admin123");
+    
+		//tag and classname=css=tagname.valueOfclassname
+		wd.findElement(By.cssSelector("input.button")).click();
+}
+}
+
